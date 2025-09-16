@@ -1,41 +1,153 @@
-<!-- Début de la Section Projet -->
-<section id="projet-promise">
-    <header class="major">
-        <h2>PROMISE - Gestion des Congés</h2>
-    </header>
-    <p>Application web full-stack développée dans le cadre de mon mémoire de licence pour automatiser le processus complet de gestion des demandes de congés.</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Abdoulaye</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
 
-    <div class="box alt">
-        <div class="row gtr-50 gtr-uniform">
-            <!-- Remplacez "images/pic01.jpg" par le chemin de VOS images -->
-            <div class="col-4"><span class="image fit"><img src="images/login-promise.jpg" alt="Page de connexion" /></span></div>
-            <div class="col-4"><span class="image fit"><img src="images/dashboard-promise.jpg" alt="Tableau de bord" /></span></div>
-            <div class="col-4"><span class="image fit"><img src="images/validation-promise.jpg" alt="Validation" /></span></div>
-        </div>
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      color: #007bff;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .project {
+      flex: 1 1 calc(50% - 20px);
+      background: #e9ecef;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .project a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+      margin-top: 20px;
+    }
+
+    @media(max-width: 600px){
+      .projects {
+        flex-direction: column;
+      }
+      .project {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Abdoulaye K.</h1>
+    <p>Développeur Web | Futur Administrateur de Bases de Données</p>
+  </header>
+
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#projects">Projets</a>
+    <a href="#skills">Compétences</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>À propos</h2>
+    <p>Je suis diplômé en informatique avec mention Bien, spécialisé en développement web et intéressé par la gestion et l’administration des bases de données. J’ai développé des projets pratiques, dont une application de gestion des congés pour mon stage.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projets</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Application de gestion des congés</h3>
+        <p>Développement d’une application web complète pour gérer les demandes et validations de congés dans une entreprise.</p>
+        <a href="#">Voir le code sur GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Mini site e-commerce</h3>
+        <p>Création d’un site e-commerce simple avec gestion des produits et panier.</p>
+        <a href="#">Voir le code sur GitHub</a>
+      </div>
+      <!-- Tu peux ajouter d'autres projets ici -->
     </div>
+  </section>
 
-    <h4>Fonctionnalités Clés</h4>
+  <section id="skills">
+    <h2>Compétences</h2>
     <ul>
-        <li>Workflow de validation hiérarchique (Employé → Responsable → RH).</li>
-        <li>Calcul automatique des soldes selon le Code du travail ivoirien.</li>
-        <li>Interface responsive (Desktop & Mobile).</li>
-        <li>Notifications par email.</li>
-        <li>Gestion des justificatifs.</li>
+      <li>Langages : HTML, CSS, JavaScript, PHP, SQL</li>
+      <li>Frameworks : Laravel, Bootstrap</li>
+      <li>Outils : Git, GitHub, PhpMyAdmin</li>
+      <li>Administration de bases de données : MySQL, PostgreSQL</li>
     </ul>
+  </section>
 
-    <h4>Technologies Utilisées</h4>
-    <ul class="actions">
-        <li><span class="button primary small">PHP</span></li>
-        <li><span class="button primary small">MySQL</span></li>
-        <li><span class="button primary small">JavaScript</span></li>
-        <li><span class="button primary small">jQuery</span></li>
-        <li><span class="button primary small">Bootstrap</span></li>
-    </ul>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:tonemail@example.com">tonemail@example.com</a></p>
+    <p>LinkedIn : <a href="https://www.linkedin.com/in/tonprofil">linkedin.com/in/tonprofil</a></p>
+    <p>GitHub : <a href="https://github.com/tonpseudo">github.com/tonpseudo</a></p>
+  </section>
 
-    <!-- REMPLACEZ LES LIENS CI-DESSOUS PAR LES VÔTRES -->
-    <ul class="actions">
-        <li><a href="https://votrenom.000webhostapp.com" class="button primary">Voir le Projet en Ligne</a></li>
-        <li><a href="https://github.com/votrepseudo/votre-repo" class="button">Voir le Code sur GitHub</a></li>
-    </ul>
-</section>
-<!-- Fin de la Section Projet -->
+  <footer>
+    &copy; 2025 Abdoulaye K. | Tous droits réservés
+  </footer>
+
+</body>
+</html>
