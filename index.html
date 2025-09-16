@@ -3,151 +3,1002 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Abdoulaye</title>
+  <title>Abdoulaye K. - Développeur Web & Administrateur BDD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #1e40af;
+      --accent-color: #3b82f6;
+      --text-color: #1f2937;
+      --light-bg: #f8fafc;
+      --dark-bg: #1e293b;
+      --light-text: #f1f5f9;
+    }
+    
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
+      color: var(--text-color);
+      background-color: var(--light-bg);
+      scroll-behavior: smooth;
     }
-
+    
+    /* Header & Navigation */
     header {
-      background-color: #007bff;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
-      padding: 20px 0;
-      text-align: center;
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
-
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-
-    nav {
-      text-align: center;
-      margin: 20px 0;
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
     }
-
-    nav a {
-      margin: 0 15px;
+    
+    .logo span {
+      color: #fbbf24;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 2rem;
+    }
+    
+    nav ul li a {
+      color: white;
       text-decoration: none;
-      color: #007bff;
-      font-weight: bold;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
+      position: relative;
     }
-
+    
+    nav ul li a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #fbbf24;
+      transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover:after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      min-height: 90vh;
+      padding: 4rem 0;
+      background: linear-gradient(rgba(37, 99, 235, 0.05), rgba(30, 64, 175, 0.1)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f8fafc"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23e2e8f0" stroke-width="1"/></svg>');
+      background-size: 30px;
+    }
+    
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+    
+    .hero-text {
+      flex: 1;
+    }
+    
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .profile-img {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid var(--primary-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+    
+    .profile-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark-bg);
+    }
+    
+    .hero-text p {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      color: var(--secondary-color);
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid var(--primary-color);
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+    }
+    
+    .btn:hover {
+      background-color: transparent;
+      color: var(--primary-color);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary-color);
+      margin-left: 1rem;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+    
+    /* Sections générales */
     section {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
+      padding: 5rem 0;
+    }
+    
+    section:nth-child(even) {
+      background-color: white;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 4px;
+      background-color: var(--accent-color);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    
+    .section-title p {
+      color: var(--text-color);
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* About Section */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+    
+    .about-text {
+      flex: 2;
+    }
+    
+    .about-image {
+      flex: 1;
+      text-align: center;
+    }
+    
+    .about-image img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
-
-    section h2 {
-      color: #007bff;
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
     }
-
-    .projects {
+    
+    .project-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .project-info {
+      padding: 1.5rem;
+    }
+    
+    .project-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary-color);
+    }
+    
+    .project-info p {
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+    
+    .project-tech {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
     }
-
-    .project {
-      flex: 1 1 calc(50% - 20px);
-      background: #e9ecef;
-      padding: 15px;
-      border-radius: 8px;
+    
+    .tech-tag {
+      padding: 0.3rem 0.8rem;
+      background-color: var(--light-bg);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--primary-color);
+      font-weight: 500;
     }
-
-    .project a {
-      color: #007bff;
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .project-links a {
+      color: var(--primary-color);
       text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
     }
-
-    footer {
+    
+    .project-links a:hover {
+      color: var(--secondary-color);
+    }
+    
+    /* Skills Section */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .skill-category {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .skill-category h3 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
       text-align: center;
-      padding: 15px;
-      background: #333;
-      color: white;
-      margin-top: 20px;
+      font-size: 1.3rem;
     }
-
-    @media(max-width: 600px){
-      .projects {
+    
+    .skill-item {
+      margin-bottom: 1.2rem;
+    }
+    
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    
+    .skill-bar {
+      height: 8px;
+      background-color: var(--light-bg);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      border-radius: 4px;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+    
+    .contact-details h4 {
+      color: var(--primary-color);
+      margin-bottom: 0.3rem;
+    }
+    
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: #fbbf24;
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      
+      .about-content {
         flex-direction: column;
       }
-      .project {
-        flex: 1 1 100%;
+      
+      h1 {
+        font-size: 2.8rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      
+      nav ul li {
+        margin: 0;
+      }
+      
+      .profile-img {
+        width: 280px;
+        height: 280px;
+      }
+      
+      h1 {
+        font-size: 2.3rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .profile-img {
+        width: 220px;
+        height: 220px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .btn {
+        display: block;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      
+      .btn-outline {
+        margin-left: 0;
       }
     }
   </style>
 </head>
 <body>
-
+  <!-- Header -->
   <header>
-    <h1>Abdoulaye K.</h1>
-    <p>Développeur Web | Futur Administrateur de Bases de Données</p>
+    <div class="container header-content">
+      <div class="logo">AK<span>.</span></div>
+      <nav>
+        <ul>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#projects">Projets</a></li>
+          <li><a href="#skills">Compétences</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#projects">Projets</a>
-    <a href="#skills">Compétences</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>À propos</h2>
-    <p>Je suis diplômé en informatique avec mention Bien, spécialisé en développement web et intéressé par la gestion et l’administration des bases de données. J’ai développé des projets pratiques, dont une application de gestion des congés pour mon stage.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projets</h2>
-    <div class="projects">
-      <div class="project">
-        <h3>Application de gestion des congés</h3>
-        <p>Développement d’une application web complète pour gérer les demandes et validations de congés dans une entreprise.</p>
-        <a href="#">Voir le code sur GitHub</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Abdoulaye Kourouma</h1>
+        <p>Développeur Web Full-Stack</p>
+        <div class="tagline">
+          Je transforme des idées en solutions numériques élégantes et fonctionnelles. 
+          Passionné par le développement web et l'administration de bases de données.
+        </div>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn">Voir mes projets</a>
+          <a href="#contact" class="btn btn-outline">Me contacter</a>
+        </div>
       </div>
-      <div class="project">
-        <h3>Mini site e-commerce</h3>
-        <p>Création d’un site e-commerce simple avec gestion des produits et panier.</p>
-        <a href="#">Voir le code sur GitHub</a>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Abdoulaye Kourouma" class="profile-img">
       </div>
-      <!-- Tu peux ajouter d'autres projets ici -->
     </div>
   </section>
 
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>À propos de moi</h2>
+        <p>Découvrez mon parcours, ma passion et ma motivation</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Je suis un développeur web passionné récemment diplômé avec mention Bien en Systèmes Informatiques et Génie Logiciel. 
+            Mon projet de fin d'études portait sur la conception et le développement d'une application web pour automatiser 
+            la gestion des congés au sein d'une entreprise.
+          </p>
+          <p>
+            Curieux et autodidacte, je suis constamment à l'affût des nouvelles technologies et des meilleures pratiques 
+            en développement web. Mon objectif est de créer des applications qui allient performance, ergonomie et élégance.
+          </p>
+          <p>
+            En dehors du code, j'aime participer à des hackathons, contribuer à des projets open source et suivre 
+            l'actualité technologique pour continuellement améliorer mes compétences.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80" alt="Travail d'équipe">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-title">
+        <h2>Mes projets</h2>
+        <p>Une sélection de mes réalisations les plus significatives</p>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Gestion des congés" class="project-img">
+          <div class="project-info">
+            <h3>Application de Gestion des Congés</h3>
+            <p>Une application web complète développée avec PHP, MySQL et JavaScript pour automatiser le processus de demande et validation des congés.</p>
+            <div class="project-tech">
+              <span class="tech-tag">PHP</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code source</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live demo</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="E-commerce" class="project-img">
+          <div class="project-info">
+            <h3>Plateforme E-commerce</h3>
+            <p>Site e-commerce avec système de panier, gestion de produits, et interface administrateur. Intégration de paiement sécurisé.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Stripe</span>
+              <span class="tech-tag">Tailwind</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code source</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live demo</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Blog" class="project-img">
+          <div class="project-info">
+            <h3>Blog Technologique</h3>
+            <p>Plateforme de blog avec système d'authentification, commentaires, et interface d'administration. Optimisé pour le référencement.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Express</span>
+            </div>
+            <div class="project-links">
+              <a href="#"><i class="fab fa-github"></i> Code source</a>
+              <a href="#"><i class="fas fa-external-link-alt"></i> Live demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
   <section id="skills">
-    <h2>Compétences</h2>
-    <ul>
-      <li>Langages : HTML, CSS, JavaScript, PHP, SQL</li>
-      <li>Frameworks : Laravel, Bootstrap</li>
-      <li>Outils : Git, GitHub, PhpMyAdmin</li>
-      <li>Administration de bases de données : MySQL, PostgreSQL</li>
-    </ul>
+    <div class="container">
+      <div class="section-title">
+        <h2>Mes compétences</h2>
+        <p>Un panorama de mes domaines de maîtrise technique</p>
+      </div>
+      <div class="skills-container">
+        <!-- Frontend Skills -->
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Frontend</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>HTML/CSS</span>
+              <span>95%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 95%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>JavaScript</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>React</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Bootstrap</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Backend Skills -->
+        <div class="skill-category">
+          <h3><i class="fas fa-server"></i> Backend</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>PHP</span>
+              <span>92%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 92%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Node.js</span>
+              <span>80%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Laravel</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Express</span>
+              <span>78%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 78%"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Database Skills -->
+        <div class="skill-category">
+          <h3><i class="fas fa-database"></i> Bases de données</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>MySQL</span>
+              <span>90%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>PostgreSQL</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>MongoDB</span>
+              <span>75%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 75%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Administration BDD</span>
+              <span>88%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 88%"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tools & Others -->
+        <div class="skill-category">
+          <h3><i class="fas fa-tools"></i> Outils & autres</h3>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Git/GitHub</span>
+              <span>93%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 93%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Docker</span>
+              <span>70%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 70%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>UML</span>
+              <span>85%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 85%"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">
+              <span>Méthodes Agile</span>
+              <span>82%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 82%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email : <a href="mailto:tonemail@example.com">tonemail@example.com</a></p>
-    <p>LinkedIn : <a href="https://www.linkedin.com/in/tonprofil">linkedin.com/in/tonprofil</a></p>
-    <p>GitHub : <a href="https://github.com/tonpseudo">github.com/tonpseudo</a></p>
+    <div class="container">
+      <div class="section-title">
+        <h2>Contactez-moi</h2>
+        <p>N'hésitez pas à me contacter pour discuter de projets ou d'opportunités</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p>abdoulaye.k@example.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Téléphone</h4>
+              <p>+225 07 07 07 07 07</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Localisation</h4>
+              <p>Abidjan, Côte d'Ivoire</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Réseaux sociaux</h4>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <form>
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse email</label>
+              <input type="email" id="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" placeholder="Sujet de votre message">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Votre message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Envoyer le message</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Abdoulaye K. | Tous droits réservés
+    <div class="container footer-content">
+      <div class="logo">Abdoulaye K.<span>Portfolio</span></div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Abdoulaye Kourouma. Tous droits réservés.</p>
+      </div>
+    </div>
   </footer>
 
+  <script>
+    // Simple animation for skill bars on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const skillBars = document.querySelectorAll('.skill-progress');
+      
+      function animateSkills() {
+        skillBars.forEach(bar => {
+          const width = bar.style.width;
+          bar.style.width = '0';
+          setTimeout(() => {
+            bar.style.transition = 'width 1.5s ease-in-out';
+            bar.style.width = width;
+          }, 200);
+        });
+      }
+      
+      // Trigger animation when skills section is in view
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateSkills();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      const skillsSection = document.getElementById('skills');
+      if (skillsSection) {
+        observer.observe(skillsSection);
+      }
+    });
+  </script>
 </body>
 </html>
